@@ -1,8 +1,30 @@
 import { useCart } from '../context/CartContext';
 import Navbar from '../components/Navbar';
+import Modal from '../components/Modal';
+import { useState } from 'react';
 
 const Cart: React.FC = () => {
     const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
+    const [showModal, setShowModal] = useState(false);
+    const [productToRemove, setProductToRemove] = useState<number | null>(null);
+
+    const handleRemoveClick = (productId: number) => {
+        setProductToRemove(productId);
+        setShowModal(true);
+    };
+
+    const handleConfirmRemove = () => {
+        if (productToRemove !== null) {
+            removeFromCart(productToRemove);
+            setShowModal(false);
+            setProductToRemove(null);
+        }
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setProductToRemove(null);
+    };
 
     return (
         <div>
@@ -25,7 +47,7 @@ const Cart: React.FC = () => {
                                             <span>{item.quantity}</span>
                                             <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
                                         </div>
-                                        <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                                        <button onClick={() => handleRemoveClick(item.id)}>Remove</button>
                                     </div>
                                 </li>
                             ))}
@@ -34,6 +56,14 @@ const Cart: React.FC = () => {
                     </>
                 )}
             </div>
+            <Modal
+                show={showModal}
+                onClose={handleCloseModal}
+                onConfirm={handleConfirmRemove}
+                title="Confirm Remove"
+            >
+                <p>Are you sure you want to remove this item from your cart?</p>
+            </Modal>
         </div>
     );
 };
