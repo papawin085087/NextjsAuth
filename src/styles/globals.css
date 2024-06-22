@@ -71,6 +71,23 @@ a:focus {
 
 /*  */
 
+.Toastify__toast {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.Toastify__toast--success {
+  background-color: #28a745;
+  color: white;
+}
+
+.Toastify__toast--error {
+  background-color: #dc3545;
+  color: white;
+}
+
+/*  */
+
 
 .products-container {
   display: grid;

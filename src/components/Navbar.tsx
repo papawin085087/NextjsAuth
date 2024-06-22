@@ -2,9 +2,12 @@ import Link from 'next/link';
 import Logout from './Logout';
 import { useAuth } from '../AuthContext';
 import styles from '../styles/Navbar.module.css';
+import { useCart } from '@/context/CartContext';
 
 const Navbar: React.FC = () => {
   const { user } = useAuth();
+  const { getTotalItems } = useCart();
+  const totalItems = getTotalItems();
 
   return (
     <nav className={styles.navbar}>
@@ -20,7 +23,7 @@ const Navbar: React.FC = () => {
           </li>
           <li className={styles.navItem}>
             <Link href="/cart" className={styles.navLink}>
-              Cart
+              Cart {totalItems > 0 && <span className={styles.cartCount}>{totalItems}</span>}
             </Link>
           </li>
           {!user ? (

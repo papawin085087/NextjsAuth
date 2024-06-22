@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import { useCart } from '../context/CartContext';
+import { toast } from 'react-toastify';
 
 interface Product {
   id: number;
@@ -28,6 +29,19 @@ const Products: React.FC = () => {
     fetchProducts();
   }, []);
 
+  const handleAddToCart = (product: Product) => {
+    addToCart(product);
+    toast.success(`${product.title} added to cart!`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -44,7 +58,7 @@ const Products: React.FC = () => {
             <Link href={`/products/${product.id}`}>
               View Details
             </Link>
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
+            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
           </div>
         ))}
       </div>
