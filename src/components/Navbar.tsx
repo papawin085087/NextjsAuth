@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 import Link from 'next/link';
 import Logout from './Logout';
 import { useAuth } from '../AuthContext';
@@ -10,6 +9,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <Link href="/">Home</Link>
       <Link href="/products">Products</Link>
+      <Link href="/cart">Cart</Link>
       {!user ? (
         <>
           <Link href="/login">Login</Link>

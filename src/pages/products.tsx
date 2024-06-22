@@ -1,7 +1,7 @@
-// pages/products.tsx
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
+import { useCart } from '../context/CartContext';
 
 interface Product {
   id: number;
@@ -15,6 +15,7 @@ interface Product {
 const Products: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -43,6 +44,7 @@ const Products: React.FC = () => {
             <Link href={`/products/${product.id}`}>
               View Details
             </Link>
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
           </div>
         ))}
       </div>
