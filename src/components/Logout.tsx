@@ -1,6 +1,7 @@
 // components/Logout.tsx
 import { signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import styles from '../styles/Navbar.module.css';
 
 const Logout: React.FC = () => {
   const handleLogout = async () => {
@@ -13,7 +14,7 @@ const Logout: React.FC = () => {
   };
 
   return (
-    <button onClick={handleLogout}>Logout</button>
+    <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
   );
 };
 
