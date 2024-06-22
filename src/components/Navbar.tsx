@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <Link href="/">Home</Link>
+      <Link href="/products">Products</Link>
       {!user ? (
         <>
           <Link href="/login">Login</Link>
