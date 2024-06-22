@@ -3,6 +3,8 @@ import { useState, FormEvent } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
+
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -13,9 +15,10 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      toast.success("Login successful!");
       router.push("/");
     } catch (error) {
-      alert(error);
+      toast.error("Invalid email or password.");
     }
   };
 
