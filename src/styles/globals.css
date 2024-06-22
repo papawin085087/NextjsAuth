@@ -213,3 +213,198 @@ form button:hover {
 }
 
 /*  */
+
+button.checkout {
+  display: inline-block;
+  background-color: #28a745; /* สีเขียว */
+  color: white;
+  font-size: 1rem; /* ลดขนาดฟอนต์ */
+  font-weight: 600;
+  padding: 10px 16px; /* ปรับขนาด padding */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-align: center;
+  margin-top: 10px; /* ลด margin */
+}
+
+button.checkout:hover {
+  background-color: #218838; /* สีเขียวเข้ม */
+  box-shadow: 0 4px 12px rgba(33, 136, 56, 0.3); /* เงาที่เพิ่มขึ้น */
+}
+
+button.checkout:active {
+  background-color: #1e7e34; /* สีเขียวเข้มกว่าเมื่อกด */
+  box-shadow: 0 2px 8px rgba(33, 136, 56, 0.3); /* เงาที่ลดลงเมื่อกด */
+}
+
+button.checkout:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.4); /* เส้นรอบสีเขียวอ่อน */
+}
+
+/* ปุ่ม Clear Cart */
+button.clear-cart {
+  display: inline-block;
+  background-color: #dc3545; /* สีแดง */
+  color: white;
+  font-size: 1rem; /* ลดขนาดฟอนต์ */
+  font-weight: 600;
+  padding: 10px 16px; /* ปรับขนาด padding */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-align: center;
+  margin-top: 10px; /* ลด margin */
+  margin-left: 10px; /* เพิ่ม margin-left */
+}
+
+button.clear-cart:hover {
+  background-color: #c82333; /* สีแดงเข้ม */
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3); /* เงาที่เพิ่มขึ้น */
+}
+
+button.clear-cart:active {
+  background-color: #bd2130; /* สีแดงเข้มกว่าเมื่อกด */
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3); /* เงาที่ลดลงเมื่อกด */
+}
+
+button.clear-cart:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.4); /* เส้นรอบสีแดงอ่อน */
+}
+
+/* จัดปุ่มให้อยู่ในแถวเดียวกัน */
+.checkout-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input, .form-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 12px rgba(33, 136, 56, 0.3);
+}
+
+.submit-button:active {
+  background-color: #1e7e34;
+  box-shadow: 0 2px 8px rgba(33, 136, 56, 0.3);
+}
+
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.4);
+}
+
+.cancel-button {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+  box-shadow: 0 4px 12px rgba(90, 98, 104, 0.3);
+}
+
+.cancel-button:active {
+  background-color: #545b62;
+  box-shadow: 0 2px 8px rgba(90, 98, 104, 0.3);
+}
+
+.cancel-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.4);
+}
+
+.checkout-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.checkout-image {
+  max-width: 80px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+.checkout-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkout-details h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.checkout-details p {
+  font-size: 1em;
+  color: #666;
+  margin: 0;
+}

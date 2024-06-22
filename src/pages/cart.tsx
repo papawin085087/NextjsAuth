@@ -2,11 +2,15 @@ import { useCart } from '../context/CartContext';
 import Navbar from '../components/Navbar';
 import Modal from '../components/Modal';
 import { useState } from 'react';
+import { useAuth } from '@/AuthContext';
+import { useRouter } from 'next/router';
 
 const Cart: React.FC = () => {
     const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
+    const { user } = useAuth();
     const [showModal, setShowModal] = useState(false);
     const [productToRemove, setProductToRemove] = useState<number | null>(null);
+    const router = useRouter();
 
     const handleRemoveClick = (productId: number) => {
         setProductToRemove(productId);
@@ -24,6 +28,15 @@ const Cart: React.FC = () => {
     const handleCloseModal = () => {
         setShowModal(false);
         setProductToRemove(null);
+    };
+
+    const handleCheckout = () => {
+        if (user) {
+            router.push('/checkout');
+        } else {
+            alert('Please log in to proceed with checkout');
+            router.push('/login');
+        }
     };
 
     return (
@@ -52,7 +65,8 @@ const Cart: React.FC = () => {
                                 </li>
                             ))}
                         </ul>
-                        <button onClick={clearCart}>Clear Cart</button>
+                        <button className="clear-cart" onClick={clearCart}>Clear Cart</button>
+                        <button className="checkout" onClick={handleCheckout}>Checkout</button>
                     </>
                 )}
             </div>
