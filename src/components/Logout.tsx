@@ -1,4 +1,3 @@
-// components/Logout.tsx
 import { signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import styles from '../styles/Navbar.module.css';

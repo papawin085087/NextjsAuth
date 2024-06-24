@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles/globals.css */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
@@ -244,65 +244,62 @@ a:focus {
 
 button.checkout {
   display: inline-block;
-  background-color: #28a745; /* สีเขียว */
+  background-color: #28a745;
   color: white;
-  font-size: 1rem; /* ลดขนาดฟอนต์ */
+  font-size: 1rem;
   font-weight: 600;
-  padding: 10px 16px; /* ปรับขนาด padding */
+  padding: 10px 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   text-align: center;
-  margin-top: 10px; /* ลด margin */
+  margin-top: 10px;
 }
 
 button.checkout:hover {
-  background-color: #218838; /* สีเขียวเข้ม */
-  box-shadow: 0 4px 12px rgba(33, 136, 56, 0.3); /* เงาที่เพิ่มขึ้น */
+  background-color: #218838;
+  box-shadow: 0 4px 12px rgba(33, 136, 56, 0.3);
 }
 
 button.checkout:active {
-  background-color: #1e7e34; /* สีเขียวเข้มกว่าเมื่อกด */
-  box-shadow: 0 2px 8px rgba(33, 136, 56, 0.3); /* เงาที่ลดลงเมื่อกด */
-}
+  background-color: #1e7e34;
+  box-shadow: 0 2px 8px rgba(33, 136, 56, 0.3);
 
 button.checkout:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.4); /* เส้นรอบสีเขียวอ่อน */
-}
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.4);
 
 /* ปุ่ม Clear Cart */
 button.clear-cart {
   display: inline-block;
-  background-color: #dc3545; /* สีแดง */
+  background-color: #dc3545;
   color: white;
-  font-size: 1rem; /* ลดขนาดฟอนต์ */
+  font-size: 1rem;
   font-weight: 600;
-  padding: 10px 16px; /* ปรับขนาด padding */
+  padding: 10px 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   text-align: center;
-  margin-top: 10px; /* ลด margin */
-  margin-left: 10px; /* เพิ่ม margin-left */
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 button.clear-cart:hover {
-  background-color: #c82333; /* สีแดงเข้ม */
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3); /* เงาที่เพิ่มขึ้น */
+  background-color: #c82333;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
 }
 
 button.clear-cart:active {
-  background-color: #bd2130; /* สีแดงเข้มกว่าเมื่อกด */
-  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3); /* เงาที่ลดลงเมื่อกด */
+  background-color: #bd2130;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
 button.clear-cart:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.4); /* เส้นรอบสีแดงอ่อน */
-}
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.4); 
 
 /* จัดปุ่มให้อยู่ในแถวเดียวกัน */
 .checkout-container {

@@ -1,6 +1,6 @@
 
 .navbar {
-    background-color: #343a40; /* สีพื้นหลัง */
+    background-color: #343a40;
     padding: 10px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
@@ -43,7 +43,7 @@
 
   .navLink:hover,
   .navLink:focus {
-    background-color: #495057; /* สีเมื่อ hover */
+    background-color: #495057;
     color: #fff;
   }
 
@@ -60,6 +60,6 @@
 
   .logoutButton:hover,
   .logoutButton:focus {
-    background-color: #495057; /* สีเมื่อ hover */
+    background-color: #495057;
     color: #fff;
   }

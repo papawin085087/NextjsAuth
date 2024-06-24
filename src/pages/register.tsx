@@ -1,4 +1,3 @@
-// pages/register.tsx
 import Register from '../components/Register';
 import Navbar from '../components/Navbar';
 
